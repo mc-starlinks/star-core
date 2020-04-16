@@ -15,10 +15,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.papermc.api</groupId>
-            <artifactId>paper-spigot</artifactId>
+            <groupId>io.papermc</groupId>
+            <artifactId>papermc-api</artifactId>
             <scope>system</scope>
-            <systemPath>${basedir}/libs/paper.jar</systemPath>
+            <systemPath>${basedir}/lib/paper.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

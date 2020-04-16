@@ -7,17 +7,20 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public final class ScoreTask extends BukkitRunnable {
 
-    private ScoreEntity entity;
+    private final ScoreEntity entity;
 
-    public ScoreTask(StarAPI instance){
-        entity = instance.getScoreFactory().getNewScore("Boscolo guei kkk");
+    public ScoreTask(StarAPI api){
+        entity = api.getScoreFactory().getNewScore("Boscolo guei kkk");
 
         entity.addLine(
                 entity.createLine().setText("Hello World!"),
-                entity.createLine().setText("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!")
+                entity.createLine().setText("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA!"),
+                entity.createLine().setFunction(player -> {
+                    return player.getItemInHand().getType().name();
+                })
         );
 
-        runTaskTimerAsynchronously(instance.getInstance(), 0, 20);
+        runTaskTimerAsynchronously(api.getInstance(), 0, 20);
     }
 
     @Override

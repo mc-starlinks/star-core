@@ -8,13 +8,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class StarLinks extends JavaPlugin {
 
-    private StarLinks instance;
     private StarAPI starApi;
 
     @Override
     public void onEnable() {
-        instance = this;
+        final StarLinks instance = getPlugin(StarLinks.class);
         starApi = new StarImpl(instance);
+
+        /*
+         * Starts the SDK
+         */
         starApi.onActivate();
 
         final ServicesManager manager = Bukkit.getServicesManager();

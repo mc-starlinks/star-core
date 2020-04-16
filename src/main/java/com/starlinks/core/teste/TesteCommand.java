@@ -10,10 +10,10 @@ public final class TesteCommand extends StarCommand {
     public TesteCommand() {
         super(CommandInfo.builder()
                 .name("teste")
-                .permission("king.a")
                 .aliases(new String[]{"testando"})
                 .target(CommandTarget.PLAYER)
-                .build());
+                .build()
+        );
     }
 
     @Override

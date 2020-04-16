@@ -12,9 +12,9 @@
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="Maven: io.papermc.api:paper-spigot:unknown">
+      <library name="Maven: io.papermc:papermc-api:unknown">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/libs/paper.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/paper.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -1,13 +1,11 @@
 package com.starlinks.core.sdk.commands;
 
-import com.starlinks.core.api.StarAPI;
 import com.starlinks.core.api.command.CommandInfo;
 import com.starlinks.core.api.command.CommandTarget;
 import com.starlinks.core.api.command.StarCommand;
-import com.starlinks.core.sdk.StarGear;
 import com.starlinks.core.sdk.StarImpl;
+import com.starlinks.core.sdk.entity.properties.PropFileImpl;
 import lombok.RequiredArgsConstructor;
-import lombok.experimental.Delegate;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
@@ -23,23 +21,11 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public final class CommandHandler {
 
-    private static final String INSUFFICIENT_PERMISSION = StarGear.colourText(
-            "&cVocê não tem permissão necessária para executar este comando."
-    );
-
-    private static final String ONLY_CONSOLE = StarGear.colourText(
-            "&cApenas o console pode executar este comando."
-    );
-
-    private static final String ONLY_PLAYER = StarGear.colourText(
-            "&cApenas jogadores podem executar este comando."
-    );
-
     private static final CommandMap commandMap = ((CraftServer) Bukkit.getServer())
             .getCommandMap();
 
     private final JavaPlugin instance;
-    private final StarImpl starAPI;
+    private final PropFileImpl properties;
 
     public void register(StarCommand... command) {
         final List<Command> mappedCommands = Arrays
@@ -62,23 +48,25 @@ public final class CommandHandler {
     ) {
 
         CommandInfo info = star.getInfo();
-        if (starAPI.getPlayerClass().isInstance(sender)) {
+        if (StarImpl.PLAYER_CLASS.isInstance(sender)) {
 
-            if(info.getTarget() == CommandTarget.CONSOLE) {
-                sender.sendMessage(ONLY_CONSOLE);
+            if (info.getTarget() == CommandTarget.CONSOLE) {
+                final String onlyConsole = properties.get("ONLY_CONSOLE");
+                sender.sendMessage(onlyConsole);
                 return true;
             }
 
             Player player = (Player) sender;
-            if (info.getPermission() != null && !player.hasPermission(info.getPermission())) {
-                sender.sendMessage(INSUFFICIENT_PERMISSION);
+            if (!player.hasPermission(info.getPermission())) {
+                final String enoughPermission = properties.get("INSUFFICIENT_PERMISSION");
+                sender.sendMessage(enoughPermission);
                 return true;
             }
-        } else {
-            if(info.getTarget() == CommandTarget.PLAYER) {
-                sender.sendMessage(ONLY_PLAYER);
-                return true;
-            }
+
+        } else if (info.getTarget() == CommandTarget.PLAYER) {
+            final String onlyPlayer = properties.get("ONLY_PLAYER");
+            sender.sendMessage(onlyPlayer);
+            return true;
         }
 
         star.onCall(sender, label, args);
