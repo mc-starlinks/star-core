@@ -17,8 +17,11 @@
         <dependency>
             <groupId>io.papermc</groupId>
             <artifactId>papermc-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/lib/paper.jar</systemPath>
+            <type>jar</type>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

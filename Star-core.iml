@@ -12,7 +12,7 @@
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
-      <library name="Maven: io.papermc:papermc-api:unknown">
+      <library name="Maven: io.papermc:papermc-api:1.8.8-R0.1-SNAPSHOT">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/paper.jar!/" />
         </CLASSES>
