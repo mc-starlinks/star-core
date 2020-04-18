@@ -18,7 +18,7 @@
             <groupId>io.papermc</groupId>
             <artifactId>papermc-api</artifactId>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/paper.jar</systemPath>
+            <systemPath>${project.basedir}/lib/paper.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

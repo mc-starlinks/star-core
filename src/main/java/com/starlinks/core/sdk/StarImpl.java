@@ -11,16 +11,11 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.entity.Player;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-
 @Getter
 @RequiredArgsConstructor
 public final class StarImpl implements StarAPI {
 
     public static final Class<Player> PLAYER_CLASS = Player.class;
-    private static final ScheduledExecutorService SCHEDULED_EXECUTOR_SERVICE = Executors
-            .newScheduledThreadPool(2);
 
     private final StarLinks instance;
 
@@ -30,17 +25,12 @@ public final class StarImpl implements StarAPI {
 
     @Override
     public void onActivate() {
-        messageProperties = new PropFileImpl("message.properties")
-                .loadInto();
+        messageProperties = new PropFileImpl(
+                "message.properties"
+        ).loadInto();
 
         commandHandler = new CommandHandler(instance, messageProperties);
         scoreFactory = new ScoreImpl();
-
-        /*
-         * Only for testes
-         */
-        commandHandler.register(new TesteCommand());
-        new ScoreTask(this);
     }
 
     @Override
