@@ -15,16 +15,16 @@
 
     <repositories>
         <repository>
-            <id>jitpack.io</id>
-            <url>https://jitpack.io</url>
+            <id>aureon-local-repo</id>
+            <url>file://${project.basedir}/../../lib/repo</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>com.github.mc-starlinks</groupId>
-            <artifactId>star-paper</artifactId>
-            <version>7d57c9d377</version>
+            <groupId>paper</groupId>
+            <artifactId>paper</artifactId>
+            <version>1.8.8</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
