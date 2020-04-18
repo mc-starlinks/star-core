@@ -11,8 +11,7 @@
     </content>
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.mc-starlinks:star-paper:ca1988474c" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: paper:paper:1.0.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.mc-starlinks:star-paper:7d57c9d377" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.12" level="project" />
   </component>
 </module>
