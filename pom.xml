@@ -13,15 +13,19 @@
     <artifactId>Star-core</artifactId>
     <version>0.0.1-Beta</version>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
-            <groupId>io.papermc</groupId>
-            <artifactId>papermc-api</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/lib/paper.jar</systemPath>
-            <type>jar</type>
-            <optional>true</optional>
+            <groupId>com.github.mc-starlinks</groupId>
+            <artifactId>star-paper</artifactId>
+            <version>ca1988474c</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
