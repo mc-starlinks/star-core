@@ -1,0 +1,2 @@
+Manifest-Version: 1.0
+Class-Path: StarCore/lib/HikariCP-2.6.1.jar StarCore/lib/slf4j-api-1.7.22.jar

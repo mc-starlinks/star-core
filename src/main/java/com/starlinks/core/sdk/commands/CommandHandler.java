@@ -2,7 +2,7 @@ package com.starlinks.core.sdk.commands;
 
 import com.starlinks.core.api.command.CommandTarget;
 import com.starlinks.core.api.command.StarCommand;
-import com.starlinks.core.api.command.StarCommandHandler;
+import com.starlinks.core.api.command.StarCommandFactory;
 import com.starlinks.core.api.command.StarCommandInfo;
 import com.starlinks.core.api.entity.properties.PropFile;
 import com.starlinks.core.sdk.StarImpl;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public final class CommandHandler implements StarCommandHandler {
+public final class CommandHandler implements StarCommandFactory {
 
     private static final CommandMap commandMap = ((CraftServer) Bukkit.getServer())
             .getCommandMap();

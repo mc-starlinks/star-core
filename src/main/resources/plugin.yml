@@ -1,6 +1,5 @@
 name: StarCore
 author: zkingboos_
-database: true
 description: "Starlink's Core"
 main: com.starlinks.core.sdk.StarLinks
 version: 0.0.1-Beta
