@@ -1,12 +1,11 @@
 package com.starlinks.core.sdk.commands;
 
+import com.starlinks.core.api.command.CommandTarget;
 import com.starlinks.core.api.command.StarCommand;
 import com.starlinks.core.api.command.StarCommandHandler;
 import com.starlinks.core.api.command.StarCommandInfo;
+import com.starlinks.core.api.entity.properties.PropFile;
 import com.starlinks.core.sdk.StarImpl;
-import com.starlinks.core.sdk.commands.info.CommandInfo;
-import com.starlinks.core.api.command.CommandTarget;
-import com.starlinks.core.sdk.entity.properties.PropFileImpl;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -27,7 +26,7 @@ public final class CommandHandler implements StarCommandHandler {
             .getCommandMap();
 
     private final JavaPlugin instance;
-    private final PropFileImpl properties;
+    private final PropFile properties;
 
     public void register(StarCommand... command) {
         final List<Command> mappedCommands = Arrays
@@ -60,8 +59,8 @@ public final class CommandHandler implements StarCommandHandler {
 
             Player player = (Player) sender;
             if (!player.hasPermission(info.getPermission())) {
-                final String enoughPermission = properties.get("INSUFFICIENT_PERMISSION");
-                sender.sendMessage(enoughPermission);
+                final String noEnoughPermission = properties.get("INSUFFICIENT_PERMISSION");
+                sender.sendMessage(noEnoughPermission);
                 return true;
             }
 
