@@ -1,9 +1,11 @@
 package com.starlinks.core.sdk.commands;
 
-import com.starlinks.core.api.command.CommandInfo;
-import com.starlinks.core.api.command.CommandTarget;
 import com.starlinks.core.api.command.StarCommand;
+import com.starlinks.core.api.command.StarCommandHandler;
+import com.starlinks.core.api.command.StarCommandInfo;
 import com.starlinks.core.sdk.StarImpl;
+import com.starlinks.core.sdk.commands.info.CommandInfo;
+import com.starlinks.core.api.command.CommandTarget;
 import com.starlinks.core.sdk.entity.properties.PropFileImpl;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
@@ -19,7 +21,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
-public final class CommandHandler {
+public final class CommandHandler implements StarCommandHandler {
 
     private static final CommandMap commandMap = ((CraftServer) Bukkit.getServer())
             .getCommandMap();
@@ -47,7 +49,7 @@ public final class CommandHandler {
             String[] args
     ) {
 
-        CommandInfo info = star.getInfo();
+        StarCommandInfo info = star.getCommandInfo();
         if (StarImpl.PLAYER_CLASS.isInstance(sender)) {
 
             if (info.getTarget() == CommandTarget.CONSOLE) {

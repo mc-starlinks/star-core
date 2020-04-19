@@ -26,8 +26,6 @@
             <artifactId>paper</artifactId>
             <version>1.8.8</version>
             <scope>provided</scope>
-            <type>jar</type>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

@@ -1,5 +1,7 @@
-package com.starlinks.core.api.command;
+package com.starlinks.core.sdk.commands.info;
 
+import com.starlinks.core.api.command.CommandTarget;
+import com.starlinks.core.api.command.StarCommandInfo;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -9,7 +11,7 @@ import java.util.List;
 
 @Builder
 @Getter
-public final class CommandInfo {
+public final class CommandInfo implements StarCommandInfo {
 
     private final static List<String> EMPTY_ALIASES = Collections.emptyList();
 

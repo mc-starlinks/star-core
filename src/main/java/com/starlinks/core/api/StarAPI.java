@@ -1,17 +1,15 @@
 package com.starlinks.core.api;
 
+import com.starlinks.core.api.command.StarCommandHandler;
 import com.starlinks.core.api.entity.ScoreFactory;
 import com.starlinks.core.api.entity.properties.PropFile;
-import com.starlinks.core.sdk.commands.CommandHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public interface StarAPI {
+public interface StarAPI extends BaseAPI {
 
     PropFile getMessageProperties();
     JavaPlugin getInstance();
     ScoreFactory getScoreFactory();
-    CommandHandler getCommandHandler();
+    StarCommandHandler getCommandHandler();
 
-    void onActivate();
-    void onDeactivate();
 }

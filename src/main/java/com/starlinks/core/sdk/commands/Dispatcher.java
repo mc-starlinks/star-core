@@ -11,10 +11,10 @@ public final class Dispatcher extends Command {
 
     public Dispatcher(CommandHandler handler, StarCommand command) {
         super(
-                command.getInfo().getName(),
+                command.getCommandInfo().getName(),
                 "StarLinks<descriptor>",
                 "StarLinks<usage>",
-                command.getInfo().getAliases()
+                command.getCommandInfo().getAliases()
         );
 
         this.handler = handler;
