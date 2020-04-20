@@ -2,6 +2,7 @@ package com.starlinks.core.api.collections;
 
 import com.starlinks.core.api.database.StarDatabaseProvider;
 
+import java.util.Collection;
 import java.util.function.Supplier;
 
 public interface Repository<K, T> {
@@ -9,6 +10,8 @@ public interface Repository<K, T> {
     StarDatabaseProvider getProvider();
 
     void createProcedures(StarDatabaseProvider provider);
+
+    Collection<T> findAll();
 
     T find(K key);
     void insert(T instance);
