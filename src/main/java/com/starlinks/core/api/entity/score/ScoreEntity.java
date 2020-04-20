@@ -4,8 +4,7 @@ import org.bukkit.entity.Player;
 
 public interface ScoreEntity {
 
-    ScoreEntry createLine();
-    void addLine(ScoreEntry... entity);
+    ScoreEntity addLines(ScoreEntry... entity);
 
     void sendTo(Player player);
 }

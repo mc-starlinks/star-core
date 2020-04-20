@@ -2,6 +2,7 @@ package com.starlinks.core.sdk.entity.score;
 
 import com.starlinks.core.api.entity.score.ScoreEntity;
 import com.starlinks.core.api.entity.score.ScoreEntry;
+import com.starlinks.core.sdk.StarGear;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -22,13 +23,9 @@ public class ScoreEntityImpl implements ScoreEntity {
     private final String title;
 
     @Override
-    public ScoreEntry createLine() {
-        return new ScoreEntryImpl();
-    }
-
-    @Override
-    public void addLine(ScoreEntry... entity) {
+    public ScoreEntity addLines(ScoreEntry... entity) {
         scoreEntries.addAll(Arrays.asList(entity));
+        return this;
     }
 
     @Override
@@ -36,7 +33,9 @@ public class ScoreEntityImpl implements ScoreEntity {
         Scoreboard board = getPlayerBoard(player);
         Objective objective = getBoardObjective(player, board);
 
-        objective.setDisplayName(title);
+        final String colouredTitle = StarGear.colourText(title);
+
+        objective.setDisplayName(colouredTitle);
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         updateLines(player, objective);
