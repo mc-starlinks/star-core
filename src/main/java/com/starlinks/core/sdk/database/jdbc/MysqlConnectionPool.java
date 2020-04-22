@@ -20,8 +20,8 @@ public abstract class MysqlConnectionPool {
         dataSource.setUsername(credentials.getUser());
         dataSource.setPassword(credentials.getPassword());
 
-        dataSource.setMinimumIdle(100);
-        dataSource.setMaximumPoolSize(1000);
+        dataSource.setMinimumIdle(3);
+        dataSource.setMaximumPoolSize(20);
 
         dataSource.setAutoCommit(false);
         dataSource.setLoginTimeout(3);

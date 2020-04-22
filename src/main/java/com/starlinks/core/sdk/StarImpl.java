@@ -17,6 +17,7 @@ import org.bukkit.entity.Player;
 @RequiredArgsConstructor
 public final class StarImpl implements StarAPI {
 
+    public static final StarGear STAR_GEAR = new StarGear();
     public static final Class<Player> PLAYER_CLASS = Player.class;
 
     private final StarLinks instance;

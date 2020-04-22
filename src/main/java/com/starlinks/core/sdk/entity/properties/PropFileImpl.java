@@ -2,6 +2,7 @@ package com.starlinks.core.sdk.entity.properties;
 
 import com.starlinks.core.api.entity.properties.PropFile;
 import com.starlinks.core.sdk.StarGear;
+import com.starlinks.core.sdk.StarImpl;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -14,6 +15,7 @@ import java.util.Properties;
 public final class PropFileImpl implements PropFile {
 
     private final String fileName;
+
     private final Properties properties = new Properties();
 
     @SneakyThrows
@@ -32,6 +34,6 @@ public final class PropFileImpl implements PropFile {
 
     public String get(String key) {
         final String content = properties.getProperty(key);
-        return StarGear.colourText(content);
+        return StarImpl.STAR_GEAR.colourText(content);
     }
 }
