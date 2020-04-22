@@ -1,9 +1,6 @@
 package com.starlinks.test.command;
 
 import com.starlinks.core.api.StarAPI;
-import com.starlinks.core.api.database.StarDatabaseProvider;
-import com.starlinks.core.sdk.database.credentials.UniversalCredentials;
-import com.starlinks.test.command.TestCommand;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicesManager;
 import org.bukkit.plugin.java.JavaPlugin;

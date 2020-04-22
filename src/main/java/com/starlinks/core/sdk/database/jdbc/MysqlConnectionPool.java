@@ -1,6 +1,6 @@
-package com.starlinks.core.sdk.database.mysql;
+package com.starlinks.core.sdk.database.jdbc;
 
-import com.starlinks.core.api.database.StarDatabaseCredentials;
+import com.starlinks.core.api.database.jdbc.StarDatabaseCredentials;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Getter;
 import lombok.SneakyThrows;
@@ -12,10 +12,10 @@ public abstract class MysqlConnectionPool {
     public HikariDataSource getDataSource(final StarDatabaseCredentials credentials){
         final HikariDataSource dataSource = new HikariDataSource();
 
-        final String uriHost = "jdbc:mysql://" +
+        final String uriHost = "jdbc:jdbc://" +
                 credentials.getHost() + "/" + credentials.getDatabase();
 
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setDriverClassName("com.jdbc.jdbc.Driver");
         dataSource.setJdbcUrl(uriHost);
         dataSource.setUsername(credentials.getUser());
         dataSource.setPassword(credentials.getPassword());

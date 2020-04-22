@@ -1,6 +1,6 @@
 package com.starlinks.core.api.collections;
 
-import com.starlinks.core.api.database.StarDatabaseProvider;
+import com.starlinks.core.api.database.jdbc.StarDatabaseProvider;
 
 import java.util.Collection;
 import java.util.function.Supplier;

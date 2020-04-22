@@ -1,6 +1,6 @@
-package com.starlinks.core.sdk.database.credentials;
+package com.starlinks.core.sdk.database.jdbc.credentials;
 
-import com.starlinks.core.api.database.StarDatabaseCredentials;
+import com.starlinks.core.api.database.jdbc.StarDatabaseCredentials;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

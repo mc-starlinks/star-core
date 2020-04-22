@@ -1,4 +1,4 @@
-package com.starlinks.core.api.database;
+package com.starlinks.core.api.database.jdbc;
 
 public interface StarDatabaseConnection {
 

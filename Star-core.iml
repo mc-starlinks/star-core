@@ -11,6 +11,7 @@
     </content>
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:3.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.22" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: paper:paper:1.8.8" level="project" />

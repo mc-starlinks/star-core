@@ -1,9 +1,9 @@
-package com.starlinks.core.sdk.database.mysql;
+package com.starlinks.core.sdk.database.jdbc;
 
 import com.starlinks.core.api.commons.StarFunction;
 import com.starlinks.core.api.commons.StarRunnable;
-import com.starlinks.core.api.database.StarDatabaseCredentials;
-import com.starlinks.core.api.database.StarDatabaseProvider;
+import com.starlinks.core.api.database.jdbc.StarDatabaseCredentials;
+import com.starlinks.core.api.database.jdbc.StarDatabaseProvider;
 import com.zaxxer.hikari.HikariDataSource;
 import lombok.Getter;
 import lombok.SneakyThrows;

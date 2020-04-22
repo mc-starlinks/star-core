@@ -1,8 +1,8 @@
 package com.starlinks.test.database;
 
 import com.starlinks.core.api.StarAPI;
-import com.starlinks.core.api.database.StarDatabaseProvider;
-import com.starlinks.core.sdk.database.credentials.UniversalCredentials;
+import com.starlinks.core.api.database.jdbc.StarDatabaseProvider;
+import com.starlinks.core.sdk.database.jdbc.credentials.UniversalCredentials;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicesManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -19,7 +19,7 @@ public final class DatabaseTestPlugin extends JavaPlugin {
         provider = api.getDatabaseFactory()
                 .newMysqlProvider()
                 .loginWithCredentials(
-                        new UniversalCredentials("localhost:3304", "starlinks", "root", "")
+                        new UniversalCredentials("localhost:3306", "starlinks", "root", "")
                 );
 
         if(provider.openAllConnections()) {
