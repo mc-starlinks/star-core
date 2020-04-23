@@ -4,7 +4,6 @@ import com.starlinks.core.api.command.CommandTarget;
 import com.starlinks.core.api.command.StarCommand;
 import com.starlinks.core.api.command.StarCommandFactory;
 import com.starlinks.core.api.command.StarCommandInfo;
-import com.starlinks.core.api.entity.properties.PropFile;
 import com.starlinks.core.sdk.StarImpl;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;

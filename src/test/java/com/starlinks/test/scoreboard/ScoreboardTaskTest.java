@@ -1,7 +1,7 @@
 package com.starlinks.test.scoreboard;
 
 import com.starlinks.core.api.StarAPI;
-import com.starlinks.core.api.entity.ScoreFactory;
+import com.starlinks.core.api.entity.score.ScoreFactory;
 import com.starlinks.core.api.entity.score.ScoreEntity;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;

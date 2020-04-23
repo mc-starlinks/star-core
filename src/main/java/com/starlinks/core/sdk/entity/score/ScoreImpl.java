@@ -1,10 +1,8 @@
-package com.starlinks.core.sdk.entity;
+package com.starlinks.core.sdk.entity.score;
 
-import com.starlinks.core.api.entity.ScoreFactory;
+import com.starlinks.core.api.entity.score.ScoreFactory;
 import com.starlinks.core.api.entity.score.ScoreEntity;
 import com.starlinks.core.api.entity.score.ScoreEntry;
-import com.starlinks.core.sdk.entity.score.ScoreEntityImpl;
-import com.starlinks.core.sdk.entity.score.ScoreEntryImpl;
 
 public final class ScoreImpl implements ScoreFactory {
 

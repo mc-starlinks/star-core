@@ -3,6 +3,7 @@ package com.starlinks.core.sdk.entity.score;
 import com.starlinks.core.api.entity.score.ScoreEntity;
 import com.starlinks.core.api.entity.score.ScoreEntry;
 import com.starlinks.core.sdk.StarGear;
+import com.starlinks.core.sdk.StarImpl;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -33,7 +34,7 @@ public class ScoreEntityImpl implements ScoreEntity {
         Scoreboard board = getPlayerBoard(player);
         Objective objective = getBoardObjective(player, board);
 
-        final String colouredTitle = StarGear.colourText(title);
+        final String colouredTitle = StarImpl.STAR_GEAR.colourText(title);
 
         objective.setDisplayName(colouredTitle);
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
@@ -52,6 +53,8 @@ public class ScoreEntityImpl implements ScoreEntity {
             String text = scoreEntry.getText() != null ?
                     scoreEntry.getText() :
                     scoreEntry.getLine().onUpdate(player);
+
+            text = StarImpl.STAR_GEAR.colourText(text);
 
             Score score = findEntryObjective(scoreIndex, objective);
 
