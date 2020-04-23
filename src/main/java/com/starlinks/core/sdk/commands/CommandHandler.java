@@ -4,6 +4,7 @@ import com.starlinks.core.api.command.CommandTarget;
 import com.starlinks.core.api.command.StarCommand;
 import com.starlinks.core.api.command.StarCommandFactory;
 import com.starlinks.core.api.command.StarCommandInfo;
+import com.starlinks.core.api.entity.configuration.StarFile;
 import com.starlinks.core.sdk.StarImpl;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
@@ -25,7 +26,7 @@ public final class CommandHandler implements StarCommandFactory {
             .getCommandMap();
 
     private final JavaPlugin instance;
-    private final PropFile properties;
+    private final StarFile properties;
 
     public void register(StarCommand... command) {
         final List<Command> mappedCommands = Arrays
@@ -51,20 +52,20 @@ public final class CommandHandler implements StarCommandFactory {
         if (StarImpl.PLAYER_CLASS.isInstance(sender)) {
 
             if (info.getTarget() == CommandTarget.CONSOLE) {
-                final String onlyConsole = properties.get("ONLY_CONSOLE");
+                final String onlyConsole = properties.getString("command_message.only_console");
                 sender.sendMessage(onlyConsole);
                 return true;
             }
 
             Player player = (Player) sender;
             if (!player.hasPermission(info.getPermission())) {
-                final String noEnoughPermission = properties.get("INSUFFICIENT_PERMISSION");
+                final String noEnoughPermission = properties.getString("command_message.insufficient_permission");
                 sender.sendMessage(noEnoughPermission);
                 return true;
             }
 
         } else if (info.getTarget() == CommandTarget.PLAYER) {
-            final String onlyPlayer = properties.get("ONLY_PLAYER");
+            final String onlyPlayer = properties.getString("command_message.only_player");
             sender.sendMessage(onlyPlayer);
             return true;
         }

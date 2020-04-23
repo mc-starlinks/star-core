@@ -1,0 +1,4 @@
+command_message:
+  insufficient_permission: "&cVocê não tem permissão necessária para executar este comando."
+  only_console: "&cApenas o console pode executar este comando."
+  only_player: "&cApenas jogadores podem executar este comando."

@@ -16,4 +16,9 @@ public final class StarJsonFile implements StarFile {
     public StarFile loadInto() {
         return this;
     }
+
+    @Override
+    public String getString(String key) {
+        return null;
+    }
 }

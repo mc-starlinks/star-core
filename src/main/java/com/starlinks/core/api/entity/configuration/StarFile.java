@@ -8,4 +8,6 @@ public interface StarFile {
     JavaPlugin getPluginInstance();
 
     StarFile loadInto();
+
+    String getString(String key);
 }

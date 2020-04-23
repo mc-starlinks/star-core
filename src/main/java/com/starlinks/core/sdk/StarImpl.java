@@ -40,6 +40,5 @@ public final class StarImpl implements StarAPI {
 
     @Override
     public void onDeactivate() {
-
     }
 }
