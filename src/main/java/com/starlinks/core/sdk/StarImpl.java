@@ -3,10 +3,12 @@ package com.starlinks.core.sdk;
 import com.starlinks.core.api.StarAPI;
 import com.starlinks.core.api.command.StarCommandFactory;
 import com.starlinks.core.api.database.StarDatabaseFactory;
+import com.starlinks.core.api.database.mongo.StarCollectionProvider;
 import com.starlinks.core.api.entity.configuration.StarFile;
 import com.starlinks.core.api.entity.score.ScoreFactory;
 import com.starlinks.core.sdk.commands.CommandHandler;
 import com.starlinks.core.sdk.database.DatabaseFactoryImpl;
+import com.starlinks.core.sdk.database.mongo.credentials.MongoURI;
 import com.starlinks.core.sdk.entity.configuration.StarYamlFile;
 import com.starlinks.core.sdk.entity.score.ScoreImpl;
 import lombok.Getter;
@@ -22,23 +24,35 @@ public final class StarImpl implements StarAPI {
 
     private final StarLinks instance;
 
+    private StarCollectionProvider principalProvider;
     private StarDatabaseFactory databaseFactory;
-    private StarFile messageProperties;
+    private StarFile messageFile;
+    private StarFile configFile;
     private StarCommandFactory commandHandler;
     private ScoreFactory scoreFactory;
 
     @Override
     public void onActivate() {
-        messageProperties = new StarYamlFile(
+        configFile = new StarYamlFile(
+                instance, "config.yml"
+        ).loadInto();
+
+        messageFile = new StarYamlFile(
                 instance, "message.yml"
         ).loadInto();
 
         databaseFactory = new DatabaseFactoryImpl();
-        commandHandler = new CommandHandler(instance, messageProperties);
+        commandHandler = new CommandHandler(instance, messageFile);
         scoreFactory = new ScoreImpl();
+        principalProvider = databaseFactory
+                .newMongoProvider()
+                .loginWithCredentials(new MongoURI(
+                        configFile.getString("mongo_uri")
+                ));
     }
 
     @Override
     public void onDeactivate() {
+        principalProvider.closeConnection();
     }
 }
