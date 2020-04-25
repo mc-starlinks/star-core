@@ -4,7 +4,7 @@ import org.bson.types.ObjectId;
 
 public interface CollectionPojo {
 
-    default ObjectId getId(){
+    default ObjectId getId() {
         return ObjectId.get();
     }
 }

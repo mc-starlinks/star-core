@@ -9,7 +9,7 @@ import lombok.SneakyThrows;
 public abstract class MysqlConnectionPool {
 
     @SneakyThrows
-    public HikariDataSource getDataSource(final StarDatabaseCredentials credentials){
+    public HikariDataSource getDataSource(final StarDatabaseCredentials credentials) {
         final HikariDataSource dataSource = new HikariDataSource();
 
         final String uriHost = "jdbc:jdbc://" +

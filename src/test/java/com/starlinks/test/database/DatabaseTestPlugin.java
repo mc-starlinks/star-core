@@ -22,7 +22,7 @@ public final class DatabaseTestPlugin extends JavaPlugin {
                         new UniversalCredentials("localhost:3306", "starlinks", "root", "")
                 );
 
-        if(provider.openAllConnections()) {
+        if (provider.openAllConnections()) {
             provider.update("create table if not exists starcore(own varchar(1))");
         }
     }

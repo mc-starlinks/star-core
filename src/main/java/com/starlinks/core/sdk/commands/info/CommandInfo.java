@@ -19,7 +19,7 @@ public final class CommandInfo implements StarCommandInfo {
     private final String[] aliases;
     private final CommandTarget target;
 
-    public List<String> getAliases(){
+    public List<String> getAliases() {
         return aliases == null ? EMPTY_ALIASES : Arrays.asList(aliases);
     }
 }

@@ -10,11 +10,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 public interface StarAPI extends BaseAPI {
 
     StarDatabaseFactory getDatabaseFactory();
+
     StarFile getMessageFile();
+
     StarCollectionProvider getPrincipalProvider();
+
     StarFile getConfigFile();
+
     JavaPlugin getInstance();
+
     ScoreFactory getScoreFactory();
+
     StarCommandFactory getCommandHandler();
 
 }

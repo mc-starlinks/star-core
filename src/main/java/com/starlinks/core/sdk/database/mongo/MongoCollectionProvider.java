@@ -6,6 +6,8 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import com.starlinks.core.api.database.mongo.StarCollectionCredentials;
 import com.starlinks.core.api.database.mongo.StarCollectionProvider;
+import com.starlinks.core.sdk.StarImpl;
+import com.starlinks.core.sdk.database.mongo.codec.IStackCodec;
 import org.bson.codecs.configuration.CodecRegistries;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
@@ -18,7 +20,8 @@ public final class MongoCollectionProvider implements StarCollectionProvider {
                     PojoCodecProvider.builder()
                             .automatic(true)
                             .build()
-            )
+            ),
+            CodecRegistries.fromCodecs(new IStackCodec(StarImpl.STAR_GEAR))
     );
 
     private MongoClient client;

@@ -77,7 +77,7 @@ public final class MysqlDatabaseProvider extends MysqlConnectionPool implements 
     }
 
     @SneakyThrows
-    private void sync(PreparedStatement statement, Object... objects){
+    private void sync(PreparedStatement statement, Object... objects) {
         int index = 1;
         for (Object object : objects) {
             statement.setObject(index++, object);

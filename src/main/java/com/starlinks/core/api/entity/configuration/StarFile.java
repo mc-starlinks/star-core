@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public interface StarFile {
 
     String getFileName();
+
     JavaPlugin getPluginInstance();
 
     StarFile loadInto();

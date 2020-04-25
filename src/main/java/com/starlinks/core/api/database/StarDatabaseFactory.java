@@ -6,5 +6,6 @@ import com.starlinks.core.api.database.mongo.StarCollectionProvider;
 public interface StarDatabaseFactory {
 
     StarDatabaseProvider newMysqlProvider();
+
     StarCollectionProvider newMongoProvider();
 }

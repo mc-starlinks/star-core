@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface StarDatabaseProvider extends StarDatabaseConnection {
 
-    <K> Optional<K> query(String query, StarFunction<ResultSet,  K> function, Object... objects);
+    <K> Optional<K> query(String query, StarFunction<ResultSet, K> function, Object... objects);
 
     void update(String query, Object... objects);
 

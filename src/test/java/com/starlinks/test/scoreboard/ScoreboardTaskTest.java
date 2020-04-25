@@ -10,7 +10,7 @@ public final class ScoreboardTaskTest extends BukkitRunnable {
 
     private final ScoreEntity entity;
 
-    public ScoreboardTaskTest(StarAPI api){
+    public ScoreboardTaskTest(StarAPI api) {
         final ScoreFactory factory = api.getScoreFactory();
 
         entity = api.getScoreFactory()

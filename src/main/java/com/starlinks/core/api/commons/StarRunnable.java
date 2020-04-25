@@ -6,7 +6,7 @@ public interface StarRunnable extends Runnable {
     default void run() {
         try {
             catchRun();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -5,6 +5,7 @@ public interface StarDatabaseConnection {
     StarDatabaseProvider loginWithCredentials(StarDatabaseCredentials credentials);
 
     boolean openAllConnections();
+
     void closeAllConnections();
 
 }

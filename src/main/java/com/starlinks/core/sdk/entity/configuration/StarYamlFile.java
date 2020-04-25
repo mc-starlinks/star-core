@@ -23,7 +23,7 @@ public final class StarYamlFile implements StarFile {
     @Override
     public StarFile loadInto() {
 
-        if(externalFile == null || !externalFile.exists()) {
+        if (externalFile == null || !externalFile.exists()) {
             pluginInstance.saveResource(fileName, false);
             externalFile = new File(pluginInstance.getDataFolder(), fileName);
         }
