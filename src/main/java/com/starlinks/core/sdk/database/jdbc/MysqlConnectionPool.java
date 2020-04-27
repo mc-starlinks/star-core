@@ -12,10 +12,10 @@ public abstract class MysqlConnectionPool {
     public HikariDataSource getDataSource(final StarDatabaseCredentials credentials) {
         final HikariDataSource dataSource = new HikariDataSource();
 
-        final String uriHost = "jdbc:jdbc://" +
+        final String uriHost = "jdbc:mysql://" +
                 credentials.getHost() + "/" + credentials.getDatabase();
 
-        dataSource.setDriverClassName("com.jdbc.jdbc.Driver");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         dataSource.setJdbcUrl(uriHost);
         dataSource.setUsername(credentials.getUser());
         dataSource.setPassword(credentials.getPassword());
@@ -23,7 +23,7 @@ public abstract class MysqlConnectionPool {
         dataSource.setMinimumIdle(3);
         dataSource.setMaximumPoolSize(20);
 
-        dataSource.setAutoCommit(false);
+        dataSource.setAutoCommit(true);
         dataSource.setLoginTimeout(3);
 
         return dataSource;
